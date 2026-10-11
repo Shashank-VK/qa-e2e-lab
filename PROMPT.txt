@@ -1,0 +1,12 @@
+Build a QA automation portfolio project in this directory proving Playwright end-to-end testing and Postman/Newman API testing skills — the standard keyword filters for SDET roles.
+
+What to build:
+- A small bundled demo web app under demo-app (Node/Express plus minimal HTML pages, for example a login plus todo app) with a seed script. Keep the app tiny; the test suites are the actual product.
+- A Playwright test suite in TypeScript under e2e with at least 12 end-to-end tests: login flows (valid and invalid credentials), CRUD happy paths, form validation errors, and one authenticated-flow test using Playwright storage state. Use Page Object Model structure. Playwright config with Chromium, HTML reporter, screenshots on failure, and trace on first retry.
+- A Postman collection (v2.1 JSON) under postman covering the demo app API: auth, CRUD, and negative cases with status-code assertions and JSON-schema checks. Include a staging environment file. Add an npm script that runs the collection headless via Newman with JUnit and HTML reports written to reports/.
+- A GitHub Actions workflow that runs both suites on every push.
+- README.md describing what is tested, a test matrix table (suite name, what it covers, count), and how to run each suite locally and in CI.
+
+Rules: plain npm scripts for everything, no exotic tooling. Every test must pass locally before finishing.
+
+When done: create a PUBLIC GitHub repository named Shashank-VK/qa-e2e-lab using gh repo create, push the main branch, and print the repository URL as the final line.

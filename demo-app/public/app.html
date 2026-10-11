@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>QA Todo App | Todos</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="card wide" data-testid="app-page">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">QA E2E Lab</p>
+          <h1>Todo dashboard</h1>
+          <p class="muted">Create, update, complete, and delete work items.</p>
+        </div>
+        <button class="secondary" type="button" data-testid="logout-button">Log out</button>
+      </header>
+      <form id="todo-form" class="todo-form" novalidate>
+        <label class="sr-only" for="todo-title">New todo title</label>
+        <input id="todo-title" name="title" placeholder="What needs to be done?" data-testid="todo-input" />
+        <button type="submit" data-testid="add-todo-button">Add todo</button>
+      </form>
+      <p class="error" role="alert" data-testid="todo-error"></p>
+      <ul id="todo-list" class="todo-list" data-testid="todo-list"></ul>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>

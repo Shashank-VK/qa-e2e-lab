@@ -1,0 +1,25 @@
+{
+  "name": "qa-e2e-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "QA automation portfolio demonstrating Playwright and Postman/Newman testing",
+  "main": "demo-app/server.js",
+  "scripts": {
+    "start": "node demo-app/server.js",
+    "seed": "node demo-app/seed.js",
+    "test:e2e": "npm run seed && playwright test",
+    "test:e2e:headed": "npm run seed && playwright test --headed",
+    "test:api": "node scripts/run-newman.js",
+    "test": "npm run test:e2e && npm run test:api",
+    "install:browsers": "playwright install --with-deps chromium"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "newman": "^6.2.1",
+    "newman-reporter-htmlextra": "^1.23.1",
+    "typescript": "^5.7.2"
+  }
+}
