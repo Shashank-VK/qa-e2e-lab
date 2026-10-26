@@ -116,3 +116,18 @@ npm test
 2. **Newman API** runs the Postman collection and uploads the JUnit and HTML reports.
 
 The project uses only npm scripts for local and CI execution.
+
+## Architecture
+
+```mermaid
+flowchart LR
+    PW[Playwright tests<br/>TypeScript, page objects] --> App[Demo app<br/>Express todo app]
+    NM[Newman / Postman<br/>API suites] --> App
+    PW --> Reports[HTML reports]
+    NM --> Reports
+    CI[GitHub Actions] --> PW
+    CI --> NM
+```
+Browser tests and API contract suites run against the same bundled
+demo app, with auth-state reuse and schema validation.
+
